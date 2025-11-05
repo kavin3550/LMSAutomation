@@ -1,0 +1,38 @@
+{
+    "positive": [
+      {
+        "testName": "Valid Course Plan Submission",
+        "academicSession": "2025-2026 (ODD)",
+        "semester": "Sem 3",
+        "programmeName": "B.B.A", 
+        "course": "3FB-Advanced Tamil",
+        "faculty": "Mr Loganathan G",
+        "class": "II - B.B.A - A",
+        "expectedStatus": "Course Content Not Uploaded"
+      }
+    ],
+  
+    "negative": [
+      {
+        "testName": "Missing Required Fields",
+        "academicSession": "",
+        "semester": "",
+        "programmeName": "", 
+        "course": "",
+        "faculty": "",
+        "class": "",
+        "expectedError": "All required fields must be filled"
+      },
+      {
+        "testName": "Invalid Programme Code",
+        "academicSession": "2024-2025",
+        "semester": "B.Sc Computer Science",
+        "programmeName": "Faculty of Science",
+        "course": "Semester 1",
+        "faculty": "INVALID123",
+        "class": "Introduction to Programming",
+        "expectedError": "Invalid Programme Code"
+      }
+    ]
+  }
+  

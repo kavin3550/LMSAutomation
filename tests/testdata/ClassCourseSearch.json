@@ -1,0 +1,25 @@
+{
+    "positive": [
+      {
+        "testName": "Valid Class and Course Selection",
+        "className": "IT-A",
+        "course": "Web Programming",
+        "expectedMessage": "Search Results"
+      }
+    ],
+    "negative": [
+      {
+        "testName": "Missing Class Field",
+        "className": "",
+        "course": "Web Programming",
+        "expectedError": "Please select Class"
+      },
+      {
+        "testName": "Missing Course Field",
+        "className": "IT-A",
+        "course": "",
+        "expectedError": "Please select Course"
+      }
+    ]
+  }
+  

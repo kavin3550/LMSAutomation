@@ -37,22 +37,22 @@ class CourseContentsPlan {
     await this.page.waitForTimeout(500);
     await this.courseContentsPlanMenu.click();
     await this.page.waitForSelector("text=Course Contents and Plan", { timeout: 10000 });
-    console.log("✅ Page loaded successfully");
+    console.log("Page loaded successfully");
   }
 
   // Fill form dynamically
   async fillCourseContentsPlan(data) {
-    console.log("🧾 Filling Course Contents and Plan form:", data);
+    console.log("Filling Course Contents and Plan form:", data);
 
     // Academic Session
     if (data.academicSession && data.academicSession.trim() !== "") {
       await this.academicSessionDropdown.selectOption(String(data.academicSession));
-    } else console.log("⚠️ Skipping Academic Session (empty)");
+    } else console.log("Skipping Academic Session (empty)");
 
     // Semester
     if (data.semester && data.semester.trim() !== "") {
       await this.semesterDropdown.selectOption(String(data.semester));
-    } else console.log("⚠️ Skipping Semester (empty)");
+    } else console.log("Skipping Semester (empty)");
 
     // Programme Name
     if (data.programmeName && data.programmeName.trim() !== "") {
@@ -60,7 +60,7 @@ class CourseContentsPlan {
       await this.searchProgrammeOption.fill(String(data.programmeName));
       await this.searchProgrammeOption.press('Enter');
       await this.page.waitForTimeout(1000);
-    } else console.log("⚠️ Skipping Programme (empty)");
+    } else console.log("Skipping Programme (empty)");
 
     // Programme Code
     // if (data.programmeCode && data.programmeCode.trim() !== "") {
@@ -75,21 +75,21 @@ class CourseContentsPlan {
     // Course
     if (data.course && data.course.trim() !== "") {
       await this.courseDropdown.selectOption(String(data.course));
-    } else console.log("⚠️ Skipping Course (empty)");
+    } else console.log("Skipping Course (empty)");
 
     // Faculty
     if (data.faculty && data.faculty.trim() !== "") {
       await this.facultyDropdown.selectOption(String(data.faculty));
-    } else console.log("⚠️ Skipping Faculty (empty)");
+    } else console.log("Skipping Faculty (empty)");
 
     // Class
     if (data.className && data.className.trim() !== "") {
       await this.classDropdown.selectOption(String(data.className));
-    } else console.log("⚠️ Skipping Class (empty)");
+    } else console.log("Skipping Class (empty)");
 
     // Click Show button
     await this.showCourseContentsBtn.click();
-    console.log("📋 Clicked 'Show Course Contents' button");
+    console.log("Clicked 'Show Course Contents' button");
     await this.page.waitForTimeout(1500);
   }
 
@@ -97,13 +97,13 @@ class CourseContentsPlan {
   async verifyResult(data) {
     if (data.expectedMessage) {
       await this.page.waitForSelector(`text=${data.expectedMessage}`, { timeout: 5000 });
-      console.log(`✅ Verified: ${data.expectedMessage}`);
+      console.log(`Verified: ${data.expectedMessage}`);
     }
 
     if (data.expectedError) {
       const error = this.page.locator(`text=${data.expectedError}`);
       await error.waitFor({ state: "visible", timeout: 5000 });
-      console.log(`❌ Verified Error: ${data.expectedError}`);
+      console.log(`Verified Error: ${data.expectedError}`);
     }
   }
 }

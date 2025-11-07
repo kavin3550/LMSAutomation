@@ -1,0 +1,27 @@
+[
+    {
+      "academicSession": "2025-2026 (ODD)",
+      "year": "2025",
+      "department": "COMPUTER SCIENCE",
+      "programmeTitle": "AI in Education",
+      "programmeType": "Workshop",
+      "fromDate": "2025-11-07",
+      "toDate": "2025-11-07",
+      "resourcePerson": "Dr. Kavin Kumar",
+      "participants": "60",
+      "fileName": "AI Workshop Agenda.pdf"
+    },
+    {
+      "academicSession": "2024-2025 (ODD)",
+      "year": "2025",
+      "department": "INFORMATION TECHNOLOGY",
+      "programmeTitle": "E-commerce Trends",
+      "programmeType": "Seminar",
+      "fromDate": "2025-02-01",
+      "toDate": "2025-02-02",
+      "resourcePerson": "Mr. Arun Raj",
+      "participants": "45",
+      "fileName": "Seminar Brochure.pdf"
+    }
+  ]
+  

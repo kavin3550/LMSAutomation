@@ -21,6 +21,8 @@ class AcademicActivitiesPage {
     // this.fileNameInput = page.locator("//input[@placeholder='File Name']");
     // this.chooseFileInput = page.locator("input[type='file']");
     this.submitButton = page.locator("//button[@name='academic_programme_submit']");
+    this.confirmButton = page.locator("//button[normalize-space()='confirm']")
+    this.okButton = page.locator("//button[normalize-space()='ok']")
 
   }
 
@@ -47,6 +49,9 @@ class AcademicActivitiesPage {
   
 
     await this.submitButton.click();
+    await this.confirmButton.click();
+    await this.okButton.click();
+
     console.log(`✅ Submitted Activity: ${data.programmeTitle}`);
 
     await this.page.waitForTimeout(2000);

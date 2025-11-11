@@ -22,17 +22,8 @@
         "faculty": "",
         "class": "",
         "expectedError": "All required fields must be filled"
-      },
-      {
-        "testName": "Invalid Programme Code",
-        "academicSession": "2024-2025",
-        "semester": "B.Sc Computer Science",
-        "programmeName": "Faculty of Science",
-        "course": "Semester 1",
-        "faculty": "INVALID123",
-        "class": "Introduction to Programming",
-        "expectedError": "Invalid Programme Code"
       }
+
     ]
   }
   

@@ -43,7 +43,7 @@ class AcademicActivitiesPage {
     await this.programmeTitleInput.fill(String(data.programmeTitle));
     await this.programmeTypeInput.fill(String(data.programmeType));
     await this.fromDateInput.evaluate((el, value) => el.value = value, data.fromDate);
-  await this.toDateInput.evaluate((el, value) => el.value = value, data.toDate);
+    await this.toDateInput.evaluate((el, value) => el.value = value, data.toDate);
     await this.resourcePersonInput.fill(String(data.resourcePerson));
     await this.participantsInput.fill(String(data.participants));
   
@@ -54,7 +54,7 @@ class AcademicActivitiesPage {
 
     console.log(`✅ Submitted Activity: ${data.programmeTitle}`);
 
-    await this.page.waitForTimeout(2000);
+    //await this.page.waitForTimeout(2000);
   }
 }
   module.exports = {AcademicActivitiesPage};

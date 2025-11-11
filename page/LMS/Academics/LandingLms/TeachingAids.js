@@ -10,6 +10,8 @@ class TeachingAids {
         this.ShortNameInput = page.locator("//input[@id='short_name_cl']");
         this.IsactiveCheckbox = page.locator("//input[@id='inlineRadio_sp_yes']");
         this.SubmitButton = page.locator("//button[@id='add-teaching-aids']");
+        this.Okbutton = page.locator("//button[normalize-space()='confirm']")
+        this.finalAlertOk = page.locator("//button[normalize-space()='ok']")
     }
     async addTeachingAids() {
        // await this.dashboard.click();
@@ -23,7 +25,10 @@ class TeachingAids {
         await this.ShortNameInput.fill('MathBasics');
         await this.IsactiveCheckbox.check();
         await this.SubmitButton.click();
-        await this.page.waitForTimeout(3000);
+        await this.Okbutton.click();
+        // await this.page.waitForTimeout(3000);
+        await this.finalAlertOk.click();
+
 
     }
 

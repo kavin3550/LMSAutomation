@@ -1,0 +1,18 @@
+{
+    "vehicleName": "School Van 01",
+    "vehicleCapacity": "25",
+    "brandName": "Tata Motors",
+    "registrationNumber": "TN38AB1234",
+    "vehicleType": "Own",
+    "registrationDate": "2023-06-01",
+    "taxRenewalDate": "2025-05-31",
+    "rcCopyPath": "tests/testdata/files/login page 2.png",
+    "isActive": "true",
+    "pocCopyPath": "tests/testdata/files/department.png",
+    "insuranceNumber": "INS567890",
+    "insuranceStartDate": "2024-06-01",
+    "insuranceRenewalDate": "2025-06-01",
+    "insuranceCopyPath": "tests/testdata/files/login page 2.png"
+    
+}
+

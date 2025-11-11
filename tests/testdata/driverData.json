@@ -1,0 +1,25 @@
+{
+    "firstName": "Ramesh",
+    "lastName": "Kumar",
+    "gender": "Male",
+    "dateOfBirth": "1990-05-12",
+    "mobile": "9876543210",
+    "officialEmail": "ramesh.kumar@company.com",
+    "aadhaarNo": "123456789012",
+    "currentAddress": "12, Anna Nagar, Chennai",
+    "state": "Tamil Nadu",
+    "pincode": "600001",
+    "bloodGroup": "A+",
+    "personalEmail": "ramesh.personal@gmail.com",
+    "district": "Chennai",
+    "bankName": "State Bank of India",
+    "accountNumber": "1234567890123456",
+    "ifscCode": "SBIN0001234",
+    "panNumber": "ABCDE1234F",
+    "epfNumber": "TN1234567890123",
+    "licenseNumber": "TN01234567890123",
+    "aadhaarCopyPath": "tests/testdata/files/dummyaadhaar.jpeg",
+    "licenseCopyPath": "tests/testdata/files/driverlicense.jpeg",
+    "photoPath": "tests/testdata/files/driverphotodummy.jpeg"
+  }
+  

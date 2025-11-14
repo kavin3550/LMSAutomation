@@ -1,22 +1,22 @@
 const { test, expect } = require('@playwright/test');
-const {LoginPage} = require('../page/Loginpage.js');
-const { readExcel } = require('../datadriven/readexcel.js');
+const { LoginPage } = require('../page/Loginpage');   // Adjust path if needed
 
-const loginData = readExcel('./excel/login.xlsx', 'Sheet1');
+test.describe('Login Test', () => {
 
-loginData.forEach((data, index) => {
-    test(`login test for user ${index + 1}`, async ({ page }) => {
-        if (!data.username || !data.password) {
-            console.log(`Skipping test for user ${index + 1} due to missing credentials.`);
-            return; // Skip this test if credentials are missing
-        }
+  test('Staff Login Test', async ({ page }) => {
 
-        const login = new LoginPage(page);
+    // Create object for LoginPage
+    const login = new LoginPage(page);
 
-        await login.navigate();
-        await login.login("data"); // Pass the current row of data
-        await page.waitForTimeout(3000);
+    // Navigate to login page
+    await login.navigate();
 
-        // await expect(page).toHaveURL("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/principal-dashboard", { timeout: 10000 });
-    });
+    // Call login function with username & password
+    await login.login("admin", "Admin@123");
+
+    // Assertion (example): Wait for dashboard or welcome text
+    await expect(page.getByText('Dashboard')).toBeVisible(); // Change if needed
+
+  });
+
 });

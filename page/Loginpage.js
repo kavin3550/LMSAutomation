@@ -1,3 +1,6 @@
+import {pageURL}from "../utility/route";
+
+
 export class LoginPage {
   constructor(page) {
       this.page = page;
@@ -8,7 +11,7 @@ export class LoginPage {
   }
 
   async navigate() {
-      await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/login");
+      await this.page.goto(pageURL.login);
   }
 
   async login(username, password) {

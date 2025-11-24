@@ -5,9 +5,9 @@ class PassengerDetailsPage {
     this.page = page;
 
     // ===== Menus =====
-    this.transportMenu = page.locator("//a[@href='#transport_menu']");
-    //this.masterMenu = page.locator("//a[@href='#transportmasters']");
-    this.AssignpassengertoboardingPoint = page.locator("(//span[contains(text(),'Assign passenger to boarding')])[1]")
+    // this.transportMenu = page.locator("//a[@href='#transport_menu']");
+    // //this.masterMenu = page.locator("//a[@href='#transportmasters']");
+    // this.AssignpassengertoboardingPoint = page.locator("(//span[contains(text(),'Assign passenger to boarding')])[1]")
     this.AssignPassenger = page.locator("(//button[@title='Assign Passenger'])[6]")
 
     // ===== Passenger Details Modal =====
@@ -20,19 +20,34 @@ class PassengerDetailsPage {
 
   }
 
+  // async AssignPassengerBoardingPoint(){
+  //   await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/transport/boarding_assign",{
+  //     waitUntil : "networkIdle"
+  //   })
+  // }
+
+        async navigate() {
+      await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/transport/passenger_assigned_to_boarding_point",{
+      waitUtill : "networkidle"
+    })
+  }
+
   // ===== Function to Add Passenger =====
   async addPassenger(data) {
     console.log(`Adding Passenger: ${data.passengerName}`);
 
     // Navigate
-    await this.transportMenu.click();
-    await this.AssignpassengertoboardingPoint.click();
-    await this.AssignPassenger.click();
+    // await this.transportMenu.click();
+    // await this.AssignpassengertoboardingPoint.click();
+   await this.AssignPassenger.click();
     await this.studentRadio.click();
     await this.RegisterNo.click();
     await this.enterIdInput.fill(data.passengerId);
     await this.addPassengerBtn.click();
     await this.finalizeSaveBtn.click();
+
+
+    
 
  
 

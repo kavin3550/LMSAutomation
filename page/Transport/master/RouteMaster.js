@@ -6,14 +6,16 @@ class RouteMaster {
         this.page = page;
 
         // ===== Menus =====
-        this.transportMenu = page.locator("//a[@href='#transport_menu']");
-        this.masterMenu = page.locator("//a[@href='#transportmasters']");
-        this.routeMasterMenu = page.locator("//div[@id='transportmasters']//li[@class='nav-item']//a[@role='tab']");
+        // this.transportMenu = page.locator("//a[@href='#transport_menu']");
+        // this.masterMenu = page.locator("//a[@href='#transportmasters']");
+        // this.routeMasterMenu = page.locator("//div[@id='transportmasters']//li[@class='nav-item']//a[@role='tab']");
 
         // ===== Buttons =====
         this.addNewButton = page.locator("//button[normalize-space()='Add New']");
         this.submitButton = page.locator("//button[contains(.,'Submit')]");
         this.clearButton = page.locator("//button[contains(.,'Clear')]");
+
+        
 
         // ===== Input Fields =====
         this.routeNameInput = page.locator("//input[@id='route_name']");
@@ -22,11 +24,17 @@ class RouteMaster {
         this.descriptionInput = page.locator("//input[@id='description']");
     }
 
+    async navigate() {
+        await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/transport/route_master", {
+            waitUntil: "load"
+        });
+    }
+
     async addRoute(routeName, startPoint, endPoint, description) {
-        // Navigate to Route Master
-        await this.transportMenu.click();
-        await this.masterMenu.click();
-        await this.routeMasterMenu.click();
+        // // Navigate to Route Master
+        // await this.transportMenu.click();
+        // await this.masterMenu.click();
+        // await this.routeMasterMenu.click();
 
         // Click Add New
         await this.addNewButton.click();

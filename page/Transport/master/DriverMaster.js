@@ -5,11 +5,6 @@ class DriverMaster {
   constructor(page) {
     this.page = page;
 
-    // ===== Menus =====
-    this.transportMenu = page.locator("//a[@href='#transport_menu']");
-    this.masterMenu = page.locator("//a[@href='#transportmasters']");
-    this.driverMasterMenu = page.locator("(//span[@class='mobile-change-d-none d-md-inline-block'][contains(text(),'Driver')])[1]");
-
     // ===== Buttons =====
     this.addNewButton = page.locator("(//a[@class='btn btn-primary waves-effect waves-light mr-1 btn-sm'])[1]");
     this.saveButton = page.locator("(//button[normalize-space()='Save'])[1]");
@@ -45,12 +40,17 @@ class DriverMaster {
     // this.cropphotoUploadInput = page.locator("//button[@id='crop']");
 
   }
-
+  async navigate(){
+    await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/transport/driver_master",{
+      waitUntil:"load"
+    });
+  }
+   
   async addDriver(data) {
     // Navigate
-    await this.transportMenu.click();
-    await this.masterMenu.click();
-    await this.driverMasterMenu.click();
+    // await this.transportMenu.click();
+    // await this.masterMenu.click();
+    // await this.driverMasterMenu.click();
     await this.addNewButton.click();
 
     await this.photoUploadInput.setInputFiles(path.resolve(data.photoPath));

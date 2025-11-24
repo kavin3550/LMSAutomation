@@ -1,16 +1,15 @@
 const { test } = require('@playwright/test');
-const { LoginPage } = require('../../page/Loginpage');
+//const { LoginPage } = require('../../page/Loginpage');
 const { AssignBoardingPointToRoute } = require('../../page/Transport/AssignBoardingPointtoRoute');
+
 
 
 test('Assign Boarding Points to Routes', async ({ page }) => {
     // Login
-    const login = new LoginPage(page);
-    await login.navigate();
-    await login.login('admin@saarcmasts.com', '123456');
-
+  
     // Page object
     const assignPage = new AssignBoardingPointToRoute(page);
+    await assignPage.AssignBoardingMenu();
 
     // Example Data
     const routeData = [

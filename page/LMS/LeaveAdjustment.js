@@ -3,8 +3,8 @@ import { expect } from '@playwright/test';
 export class LeaveAdjustmentPage {
   constructor(page) {
     this.page = page;
-    this.leave=page.getByText('Leave Management');
-    this.LeaveAdjustment=page.getByText('Leave Adjustment');
+    // this.leave=page.getByText('Leave Management');
+    // this.LeaveAdjustment=page.getByText('Leave Adjustment');
     this.addnew=page.getByRole('button', { name: 'Add New' });
   
     //  Dropdown locators
@@ -21,11 +21,17 @@ export class LeaveAdjustmentPage {
     this.submitButton = page.getByRole('button', { name: 'Submit' });
     this.clearButton = page.getByRole('button', { name: 'Clear' });
   }
+      async LeaveAdjustmentPage() {
+      await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/leave/leave_adjustment",{
+      waitUtill : "networkidle"
+    })
+  } 
+
   async navigate() {
-    await this.leave.click();
-    await this.page.waitForTimeout(3000);
-    await this.LeaveAdjustment.click();
-    await this.page.waitForTimeout(3000);
+    // await this.leave.click();
+    // await this.page.waitForTimeout(3000);
+    // await this.LeaveAdjustment.click();
+    // await this.page.waitForTimeout(3000);
     await this.addnew.click();
     await this.page.waitForTimeout(6000);
     await this.financialYearDropdown.click();

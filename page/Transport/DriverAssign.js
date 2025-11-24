@@ -5,28 +5,31 @@ class DriverAssignPage {
     this.page = page;
 
     // ===== Menus =====
-    this.transportMenu = page.getByRole('link', { name: 'Transport' });
-    this.masterMenu = page.getByRole('link', { name: 'Master' });
-    this.driverAssignMenu = page.getByRole('link', { name: 'Driver Assign' });
+    // this.transportMenu = page.locator("//a[@href='#transport_menu']");
+    // this.driverAssignMenu = page.locator("//span[normalize-space()='Driver Assign']");
+    this.driverSelectdropdown = page.locator("(//select[@name='driver_id'])[1]")
+     this.alertPopOkButton = page.locator("//button[normalize-space()='confirm']")
+     this.alertSuccessOkButton = page.locator("//button[normalize-space()='ok']")
+  }
+  async DriverAssignnavigate(){
+    await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/transport/driver_assign",{
+      waitUntil : "networkidle"
+    })
   }
 
   async navigate() {
-    await this.transportMenu.click();
-    await this.masterMenu.click();
-    await this.driverAssignMenu.click();
-    await this.page.waitForLoadState('networkidle');
-    console.log('✅ Navigated to Driver Assign page');
+    // await this.transportMenu.click();
+    // await this.driverAssignMenu.click();
+    await this.driverSelectdropdown.selectOption({ label: 'jj' });
+     await this.alertPopOkButton.click();
+     await this.alertSuccessOkButton.click();
+
+    await this.driverSelectdropdown.fill('jj')
+   
   }
 
-  async assignDriver(busName, driverName) {
-    // Locate the specific bus row using the bus name
-    const busRow = this.page.locator(`//td[contains(., '${busName}')]/following-sibling::td//select`);
-    await expect(busRow).toBeVisible();
-
-    // Select the driver from the dropdown
-    await busRow.selectOption({ label: driverName });
-    console.log(`✅ Assigned driver "${driverName}" to bus "${busName}"`);
-  }
+  
+  
 }
 
 module.exports = { DriverAssignPage };

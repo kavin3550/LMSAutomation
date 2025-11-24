@@ -4,15 +4,17 @@ class AssignBoardingPointToRoute {
     constructor(page) {
         this.page = page;
 
-        // ===== Menus =====
-        this.transportMenu = page.locator("//a[@href='#transport_menu']");
-        this.assignBoardingPointMenu = page.locator("(//span[contains(text(),'Assign Boarding Point to')])[1]");
-        this.boardinglist = page.locator("(//div)[175]")
-        this.boardingpointlist = page.locator("(//div[@id='choices--boarding_id_16-item-choice-4'])[1]")
+    
+         this.boardinglist = page.locator("(//div)[175]")
+         this.boardingpointlist = page.locator("(//div[@id='choices--boarding_id_16-item-choice-4'])[1]")
 
         // ===== Locators =====
         this.tableRows = page.locator("//table/tbody/tr");
         this.saveButton = page.locator("(//button[normalize-space()='Submit'])[1]");
+    }
+
+    async AssignBoardingMenu(){
+        await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/transport/boarding_assign",)
     }
 
     /**
@@ -22,8 +24,8 @@ class AssignBoardingPointToRoute {
      */
     async assignBoardingPoints(routeName, boardingPoints = []) {
         // Navigate to page
-        await this.transportMenu.click();
-        await this.assignBoardingPointMenu.click();
+        //await this.transportMenu.click();
+        //await this.assignBoardingPointMenu.click();
 
         // Wait for table visible
         await this.boardinglist.click();

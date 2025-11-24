@@ -1,19 +1,28 @@
 const { test } = require('@playwright/test');
-const { LoginPage } = require('../../page/Loginpage');
 const { DriverAssignPage } = require('../../page/Transport/DriverAssign');
 
 test('Assign driver to bus in Driver Assign page', async ({ page }) => {
-  // ===== Step 1: Login =====
-  const login = new LoginPage(page);
-  await login.navigate();
-  await login.login('admin@saarcmasts.com', '123456');
+
+
+
+});
+
+const testData = [
+  { busName: "Swift-TN47AQ8989-14", driverName: "jj" },
+  { busName: "NEXON-TN37AQ1234-15", driverName: "kavin kumar" },
+  { busName: "Honda-TN67AW2445-16", driverName: "Janani S" }
+];
+
+test('Assign driver dynamically to Bus', async ({ page }) => {
+
 
   // ===== Step 2: Navigate to Driver Assign =====
   const driverAssign = new DriverAssignPage(page);
-  await driverAssign.navigate();
+  await driverAssign.DriverAssignnavigate();
 
-  // ===== Step 3: Assign drivers =====
-  await driverAssign.assignDriver('Swift-TN47AQ9899-14', 'kavin kumar');
-//   await driverAssign.assignDriver('NEXON-TN37AQ1234-15', 'kavin kumar');
-//   await driverAssign.assignDriver('Honda-TN67AW2445-16', 'kavin kumar');
+  // ===== Step 3: Assign drivers dynamically =====
+  for (const data of testData) {
+    await driverAssign.selectDriver(data.busName, data.driverName);
+  }
+
 });

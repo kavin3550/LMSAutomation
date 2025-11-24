@@ -8,16 +8,15 @@ const rawData = fs.readFileSync('tests/testdata/CoursePlanCompletion.json');
 const rows = JSON.parse(rawData);
 
 // 🔹 This runs before every test
-test.beforeEach(async ({ page }) => {
-  const login = new LoginPage(page);
-  await login.navigate();
-  await login.login('admin@saarcmasts.com', '123456');
-});
+// test.beforeEach(async ({ page }) => {
+//   const login = new LoginPage(page);
+//   await login.navigate();
+//   await login.login('admin@saarcmasts.com', '123456');
+// });
 
 // 🔹 Main test
 test('Fill Course Plan Completion from JSON data', async ({ page }) => {
   const coursePlan = new CoursePlanCompletionPage(page);
-
   await coursePlan.navigate();
 
   for (const data of rows) {

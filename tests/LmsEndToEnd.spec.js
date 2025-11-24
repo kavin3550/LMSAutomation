@@ -37,6 +37,7 @@ test.describe('LMS - End to End Testing Suite', () => {
   // 1️⃣ Login before each test
   // =========================================================
   test.beforeEach(async ({ page }) => {
+    test.setTimeout(60000);
     console.log('🔐 Logging in...');
     const login = new LoginPage(page);
     await login.navigate();

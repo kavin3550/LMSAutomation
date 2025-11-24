@@ -5,9 +5,9 @@ class CoursePlanCompletionPage {
     this.page = page;
 
     // Menu Locators
-    this.academicsMenu = page.locator("(//a[@href='#Academics'])[1]");
-    this.lmsMenu = page.locator("//a[normalize-space()='LMS']");
-    this.coursePlanCompletion = page.locator("//span[normalize-space()='Course Plan Completion']");
+    // this.academicsMenu = page.locator("(//a[@href='#Academics'])[1]");
+    // this.lmsMenu = page.locator("//a[normalize-space()='LMS']");
+    // this.coursePlanCompletion = page.locator("//span[normalize-space()='Course Plan Completion']");
 
     // Form locators
     this.academicSessionDropdown = page.locator("//select[@id='academic_session']");
@@ -21,12 +21,16 @@ class CoursePlanCompletionPage {
   }
 
   async navigate() {
-    await this.academicsMenu.click();
-    await this.page.waitForTimeout(500);
-    await this.lmsMenu.click();
-    await this.page.waitForTimeout(500);
-    await this.coursePlanCompletion.click();
-    await this.page.waitForSelector("text=Course Plan Completion", { timeout: 10000 });
+    await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/lms?comp=course_plan_completion",{
+      waitUntill:"networkidle"
+    })
+
+    // await this.academicsMenu.click();
+    // await this.page.waitForTimeout(500);
+    // await this.lmsMenu.click();
+    // await this.page.waitForTimeout(500);
+    // await this.coursePlanCompletion.click();
+    // await this.page.waitForSelector("text=Course Plan Completion", { timeout: 10000 });
   }
 
   async fillCoursePlan(data) {

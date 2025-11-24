@@ -4,10 +4,10 @@ class VehicleMaster {
   constructor(page) {
     this.page = page;
 
-    // ===== Menus =====
-    this.transportMenu = page.locator("//a[@href='#transport_menu']");
-    this.masterMenu = page.locator("//a[@href='#transportmasters']");
-    this.vehicleMasterMenu = page.locator("(//span[contains(text(),'Vehicle')])[1]");
+    // // ===== Menus =====
+    // this.transportMenu = page.locator("//a[@href='#transport_menu']");
+    // this.masterMenu = page.locator("//a[@href='#transportmasters']");
+    // this.vehicleMasterMenu = page.locator("(//span[contains(text(),'Vehicle')])[1]");
 
     // ===== Buttons =====
     this.addNewButton = page.locator("(//a[@class='btn btn-primary waves-effect waves-light mr-1 btn-sm'])[1]");
@@ -30,11 +30,17 @@ class VehicleMaster {
     this.InsuranceCopyInput = page.locator("//input[@id='insurance_copy']");
   }
 
+  async vehicleMenu(){
+    await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/transport/vehicle_master",{
+      waitUntill : "networkidle"
+    })
+  }
+
   async addVehicle(data) {
     // Navigate to Vehicle Master
-    await this.transportMenu.click();
-    await this.masterMenu.click();
-    await this.vehicleMasterMenu.click();
+    // await this.transportMenu.click();
+    // await this.masterMenu.click();
+    // await this.vehicleMasterMenu.click();
     await this.addNewButton.click();
 
     // Fill fields

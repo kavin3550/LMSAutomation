@@ -10,11 +10,9 @@ class AdminLms {
          this.leavetype1=page.locator("//div[@id='choices--leave_type_id-item-choice-2']")
     }
     async newbutton(){
-        await this.dashboard.click()
-        await this.page.waitForTimeout(5000)
-        await this.lmsMenu.click();
-        
-        await this.studentLeave.click()
+        await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/leave/student_leave_config",{
+            waitUtil :"networkidle"
+        })
        
         await this.addNewButton.click();
         // await this.page.waitForTimeout(2000)

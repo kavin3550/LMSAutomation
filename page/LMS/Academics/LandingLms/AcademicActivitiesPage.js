@@ -2,10 +2,6 @@ class AcademicActivitiesPage {
   constructor(page) {
     this.page = page;
 
-    // ===== Menus =====
-    this.academicsMenu = page.locator("(//a[@href='#Academics'])[1]");
-    this.lmsMenu = page.locator("//a[normalize-space()='LMS']");
-    this.AcademicActivitiesmenu = page.locator("//span[@class='mobile-change-d-none d-md-inline-block'][contains(text(),'Academic')]");
     // Button
     this.addButton = page.locator("//button[normalize-space()='Add Academic Activities']")
     // Add Academic Activities 
@@ -25,12 +21,17 @@ class AcademicActivitiesPage {
     this.okButton = page.locator("//button[normalize-space()='ok']")
 
   }
+    async navigate() {
 
+    await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/lms?comp=academic_programmes",{
+      waitUtill : "networkidle"
+    })
+  }
   async addActivity(data) {
     console.log(`🧾 Adding Activity: ${data.programmeTitle}`);
-    await this.academicsMenu.click();
-    await this.lmsMenu.click();
-    await this.AcademicActivitiesmenu.click();
+    // await this.academicsMenu.click();
+    // await this.lmsMenu.click();
+    // await this.AcademicActivitiesmenu.click();
      // Open Add Activity form
      await this.addButton.click();
      await this.page.waitForTimeout(1000);

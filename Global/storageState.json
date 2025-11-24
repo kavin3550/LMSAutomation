@@ -1,0 +1,35 @@
+{
+  "cookies": [
+    {
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6IlRpZk5QcTJTZXNnVmhWblNRV0dlVVE9PSIsInZhbHVlIjoiYythM0NwdTBGS2NGUHBicTYzSjZBMk9JT3VES2hVT0s1cFo3QVh2cnI3L2l3T1lYM2VQZk50a2EybkpNMDQ4bGMvQVZjdnMyNmtzMC94bDRwRWhkZnlpamNNZGVhSGNpM1hnalJwampQZkl0K1hmM3hYSnNENzF6S1RSQk13QnAiLCJtYWMiOiI0ZWRiNGM5ZWEzNWJjODEyMGM1OGY1ZjFhNGU0YzgzYWI4MmExN2I3ZDdkODgzZDU1OGRkOWY0YmZjOWNiODM2IiwidGFnIjoiIn0%3D",
+      "domain": "jubilant-darkness-qidltchfum5o.on-vapor.com",
+      "path": "/",
+      "expires": 1764560579.521947,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "laravel_session",
+      "value": "eyJpdiI6IlhiVlNPRENaM1ZtSzlzTTQwdFd2Umc9PSIsInZhbHVlIjoieEllaDQ5K3NoYjlRcmR4OWVhVW15NnJjeEtyZ0hHNkdTMHdQUllKdWxlMHpTVTFzRlg0MGtBdzEyblNCeXJMOEg2UkNremxzbHFsVlozc05Sd2ZXaklYL3VIdm1MTHY0MkVuN1V1Z1BKRndpQlQxRXNjYk8rOXlyOFI1KzFROEYiLCJtYWMiOiJiYWFmMGIzYzI1YTMyNjA1NjFkMDVhMjdmNjRkMmU4NTQ3ZDQ2M2I4NjcyNTE4NWQ1Mzg1MmE5NjQ1ZjdjMzFmIiwidGFnIjoiIn0%3D",
+      "domain": "jubilant-darkness-qidltchfum5o.on-vapor.com",
+      "path": "/",
+      "expires": 1764560579.522079,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "KmuAF6B3rsGSb931ozyt3iVZ5bCU1XPo8HlahCSKhss-1763960638.308439-1.0.1.1-iH5LhyGbDLH.4PpdU2zdMbT0UODS.tXlG0hingKGkTLBvpm77eyxCpnrTCavvKgJQuy5frxSSvTg7h1IHuZ6uagK73JhLHN_f7HL2Sj70YE6WL_DQak_jRSgqAkqUG19",
+      "domain": ".on-vapor.com",
+      "path": "/",
+      "expires": 1763962439.522155,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

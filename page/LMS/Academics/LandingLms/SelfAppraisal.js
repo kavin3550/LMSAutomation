@@ -4,9 +4,9 @@ class SelfAppraisal {
 
        
         // ===== Menus =====
-        this.AcademicsMenu = page.locator("(//a[@href='#Academics'])[1]");
-        this.LMSMenu = page.locator("//a[normalize-space()='LMS']");
-        this.SelfAppraisal = page.locator("//span[contains(text(),'Self')]");
+        // this.AcademicsMenu = page.locator("(//a[@href='#Academics'])[1]");
+        // this.LMSMenu = page.locator("//a[normalize-space()='LMS']");
+        // this.SelfAppraisal = page.locator("//span[contains(text(),'Self')]");
 
         // ===== Page Elements =====
         this.FacultyDropdown = page.locator("//div[@class='choices__inner']");
@@ -19,15 +19,15 @@ class SelfAppraisal {
 
 
     }
-
+async navigate(){
+    await this.page.goto("https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/lms?comp=self_appraisal&current_tab=pi_1" ,
+        {
+            waitUntil : "networkidle"
+        }
+    );
+}
     async addSelfAppraisal() {
-        await this.page.waitForTimeout(3000);
-        await this.AcademicsMenu.click();
-        await this.page.waitForTimeout(1000);
-        await this.LMSMenu.click();
-        await this.SelfAppraisal.click();
-         await this.FacultyDropdown.click();
-        // await this.selectFacultyDropdown.click();
+        await this.FacultyDropdown.click();
         await this.page.locator("//div[contains(@class,'choices__item--choice')][normalize-space()='Dr Janani S -CAS10015']").click();
         await this.SubmitButton.click();
         await this.confirmMsg.click();

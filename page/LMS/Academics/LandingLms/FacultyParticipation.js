@@ -14,11 +14,7 @@ class FacultyParticipation {
          this.SubmitButton = page.locator("(//button[normalize-space()='Submit'])[1]");
     }
 
-    // async FacultyParticipationMenu(){
-    //     "https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/lms?comp=faculty_participation&current_tab=fdps",{
-    //          waitUntil : "networkIdle"
-    //     }
-    // }
+
         async FacultyParticipationMenu() {
         await this.page.goto(
             "https://jubilant-darkness-qidltchfum5o.on-vapor.com/admin/lms?comp=faculty_participation&current_tab=fdps",

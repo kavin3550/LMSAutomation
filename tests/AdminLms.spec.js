@@ -1,5 +1,4 @@
 const { test, expect } = require('@playwright/test');
-//const { LoginPage } = require('../page/Loginpage.js');
 const { AdminLms } = require('../page/LMS/AdminLms.js'); // ✅ Fix path as needed
 
 test('new leave', async ({ page }) => {

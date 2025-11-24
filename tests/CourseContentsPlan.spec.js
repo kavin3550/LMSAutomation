@@ -1,6 +1,5 @@
 const { test } = require('@playwright/test');
 const { CourseContentsPlan} = require('../page/LMS/Academics/LandingLms/CourseContentsPlan.js');
-//const { LoginPage } = require('../page/Loginpage');
 const data = require('./testdata/CourseContentsAndPlan.json');
 
 test.describe('Course Contents and Plan Module', () => {
